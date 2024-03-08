@@ -1,0 +1,18 @@
+
+EstadoseFaturamentos = {'SP':67836.43, 'RJ':36678.66,'MG':29229.88, 'ES':27165.48, 'Outros' :19849.53 }
+faturamentoTotal = sum(EstadoseFaturamentos.values())
+percentualDosEstados = []
+
+
+
+print('\033[1;31m' + f'O faturamento total da distribuidora foi de: R${faturamentoTotal:.2f}.\n' + '\033[0m')
+
+
+print(25*'=', end=' ')
+print('Percentual de Faturamento por Estado',end=' ')
+print(25*'=')
+for estado, fat in EstadoseFaturamentos.items():
+    percentual = (fat/faturamentoTotal) * 100
+    print(f'O faturamento de {estado} corresponde a {percentual:.1f}% do faturamento total da distribuidora.')
+
+
